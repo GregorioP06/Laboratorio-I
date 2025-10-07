@@ -4,7 +4,7 @@ let last = NaN;
 let n = NaN;
 do {
     n = Number(prompt());
-    if ((n > 0 && n % 2 == 0) || (n < 0 && last >= n)) {
+    if (((n > 0 && n % 2 == 0) || (n < 0 && last >= n)) && n % 1 == 0) {
         console.log(n);
         last = n;
     }

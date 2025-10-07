@@ -1,4 +1,5 @@
-// Si scriva un programma che legga da tastiera 10 interi e stampi la media aritmetica di tutti i valori diversi da zero e di segno uguale all’ultimo valore della sequenza.
+// comando sbagliato
+// Si scriva un programma che legga da tastiera 10 interi e stampi la media aritmetica di tutti i valori diversi da zero e di segno uguale al valore precedente della sequenza.
 
 let tot = 0;
 let count = 0;
