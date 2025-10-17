@@ -15,7 +15,6 @@ while (true) {
     for (let i = 1; i < current; i++) {
         if (current % i == 0) {
             tot += i;
-            // output += i + " + ";
         }
     }
     if (tot == current) {
