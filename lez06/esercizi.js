@@ -13,9 +13,12 @@ function replace(arr, target, replacement) {
 }
 
 let input = [1, 2, 3];
-
 console.log(
-    `${input} --> ${replace(input, 3, 100)} | (Input non modificato: ${input})`
+    `replace: ${input} --> ${replace(
+        input,
+        3,
+        100
+    )} | (Input non modificato: ${input})`
 );
 
 // 2)
@@ -29,8 +32,7 @@ function contamaggioredi(arr, threshold) {
     return count;
 }
 
-input = [1, 10, 100];
-console.log(contamaggioredi(input, 5));
+console.log("contamaggioredi --> " + contamaggioredi([1, 10, 100], 5));
 
 // 3)
 function prodotto_scalare(x, y) {
@@ -45,7 +47,29 @@ function prodotto_scalare(x, y) {
     return result;
 }
 
-console.log(prodotto_scalare([1, 2, 3], [2, 2, 3]));
+console.log("prodotto_scalare --> " + prodotto_scalare([1, 2, 3], [2, 2, 3]));
+
+// 4)
+function clip(arr, threshold, replacement) {
+    return arr.map((x) =>
+        x > threshold
+            ? replacement === undefined
+                ? threshold
+                : replacement
+            : x
+    );
+}
+
+console.log("clip1 --> " + clip([1, 10, 100], 5, 9));
+console.log("clip2 --> " + clip([1, 10, 100], 5, undefined));
+
+// 5)
+function norma(v) {
+    v.norma = Math.sqrt(v.x ** 2 + v.y ** 2);
+    return v;
+}
+
+console.log("norma --> " + JSON.stringify(norma({ x: 10, y: 5 })));
 
 // 6)
 function creaFiltro(threshold) {
@@ -55,4 +79,4 @@ function creaFiltro(threshold) {
 }
 
 f = creaFiltro(5);
-console.log(f([1, 2, 10, 3]));
+console.log("creaFiltro --> " + f([1, 2, 10, 3]));
