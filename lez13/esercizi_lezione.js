@@ -11,7 +11,7 @@ function listPrint_rec(head) {
 
 function listPrint_iter(head) {
     let current = head;
-    while (current != null) {
+    while (current !== null) {
         console.log(current.val);
         current = current.next;
     }
@@ -33,6 +33,7 @@ function listFind_iter(head, value) {
 }
 
 function listInsert(x, value) {
+    if (x === null) return;
     const temp = x.next;
     x.next = { val: value, next: temp };
 }
@@ -47,9 +48,16 @@ function listUnshift(head) {
     return { val: undefined, next: head };
 }
 
-function listPush(head, value) {
+function listPush_rec(head, value) {
+    if (head === null) return { val: value, next: null };
+    if (head.next) listPush_rec(head.next, value);
+    else listInsert(head, value);
+    return head;
+}
+
+function listPush_iter(head, value) {
     let current = head;
-    while (current.next != null) {
+    while (current.next !== null) {
         current = current.next;
     }
     current.next = { val: value, next: null };
@@ -58,7 +66,7 @@ function listPush(head, value) {
 
 function listPop(head) {
     let current = head;
-    while (current.next.next != null) {
+    while (current.next.next !== null) {
         current = current.next;
     }
     const r = current.next.val;
@@ -93,7 +101,7 @@ function listConcat(a, b) {
 function listToArray(head) {
     if (head === null) return null;
 
-    let next = listToArray(head.next);
+    const next = listToArray(head.next);
 
     if (next != null) {
         return [head.val].concat(next);
@@ -122,7 +130,7 @@ head = listUnshift(head);
 listPrint_iter(head);
 
 console.log("-- aggiungi in coda");
-listPush(head, 100);
+listPush_rec(head, 100);
 listPrint_iter(head);
 
 console.log("-- rimovi in coda");
