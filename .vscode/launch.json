@@ -10,7 +10,7 @@
             "name": "Launch File (Linux)",
             "skipFiles": ["<node_internals>/**"],
             "program": "${file}",
-            "runtimeExecutable": "/home/greg/.nvm/versions/node/v22.19.0/bin/node"
+            "runtimeExecutable": "~/.nvm/versions/node/v22.19.0/bin/node"
         },
         {
             "type": "node",
