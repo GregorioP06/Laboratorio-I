@@ -1,8 +1,8 @@
-const operazioni = new Set();
-
 class CreditoInsufficiente extends Error {}
 
 class Parcometro {
+    static #operazioni = new Set();
+    
     #credito;
     #listaMovimenti = [];
 
@@ -26,7 +26,7 @@ class Parcometro {
         this.#credito += euro;
         const movimento = new Movimento("R", euro, motivo, new Date());
         this.#listaMovimenti.unshift(movimento);
-        operazioni.add([this, movimento]);
+        Parcometro.#operazioni.add([this, movimento]);
     }
 
     paga(euro, motivo) {
@@ -38,7 +38,7 @@ class Parcometro {
         this.#credito -= euro;
         const movimento = new Movimento("S", euro, motivo, new Date());
         this.#listaMovimenti.unshift(movimento);
-        operazioni.add([this, movimento]);
+        Parcometro.#operazioni.add([this, movimento]);
     }
 
     storico(k = 5) {
@@ -46,7 +46,7 @@ class Parcometro {
     }
 
     static registro() {
-        return new Set(operazioni);
+        return new Set(Parcometro.#operazioni);
     }
 }
 
