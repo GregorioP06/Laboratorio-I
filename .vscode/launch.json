@@ -5,19 +5,37 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "JS - Launch File (Linux)",
             "type": "node",
             "request": "launch",
-            "name": "Launch File (Linux)",
-            "skipFiles": ["<node_internals>/**"],
             "program": "${file}",
+            "skipFiles": [
+                "**/node_modules/**"
+            ],
             "runtimeExecutable": "~/.nvm/versions/node/v22.19.0/bin/node"
         },
         {
+            "name": "TS - Launch File (Linux)",
             "type": "node",
             "request": "launch",
-            "name": "Launch file (Windows)",
-            "skipFiles": ["<node_internals>/**"],
-            "program": "${file}"
+            "program": "${file}",
+            "outFiles": [
+                "${workspaceFolder}/**/*.(m|c|)js",
+                "!**/node_modules/**"
+            ],
+            "preLaunchTask": "TS - Compile current file",
+            "sourceMaps": true,
+            "stopOnEntry": false,
+            "runtimeExecutable": "~/.nvm/versions/node/v22.19.0/bin/node",
+        },
+        {
+            "name": "JS - Launch file (Windows)",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "skipFiles": [
+                "**/node_modules/**"
+            ]
         }
     ]
 }
