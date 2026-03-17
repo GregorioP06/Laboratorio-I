@@ -1,12 +1,10 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "nodenext",
         "strict": true,
-        "alwaysStrict": true,
         "noImplicitReturns": true,
-        "noImplicitAny": true,
+        "module": "nodenext",
         "outDir": "out",
-        "sourceMap": true
+        "sourceMap": true,
+        "verbatimModuleSyntax": true,
     },
 }
