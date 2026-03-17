@@ -4,7 +4,7 @@
         {
             "label": "TS - Compile current file",
             "type": "shell",
-            "command": "tsc --outDir ${workspaceFolder}/out --sourceMap true ${relativeFile}",
+            "command": "tsc --target esnext --outDir ${workspaceFolder}/out --sourceMap true ${relativeFile}",
             "problemMatcher": ["$tsc"],
         }
     ]
