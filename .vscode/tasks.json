@@ -4,7 +4,7 @@
         {
             "label": "TS - Compile current file",
             "type": "shell",
-            "command": "tsc --module nodenext --outDir ${workspaceFolder}/out --sourceMap true ${relativeFile}",
+            "command": "tsc --strict --module nodenext --outDir ${workspaceFolder}/out --sourceMap ${relativeFile}",
             "problemMatcher": ["$tsc"],
         }
     ]
