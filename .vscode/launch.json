@@ -12,7 +12,7 @@
             "skipFiles": [
                 "**/node_modules/**"
             ],
-            "runtimeExecutable": "~/.nvm/versions/node/v24.14.0/bin/node"
+            "runtimeExecutable": "~/.nvm/versions/node/v24.14.1/bin/node"
             // https://stackoverflow.com/a/56968338
             // "runtimeExecutable": "/bin/bash",
             // "runtimeArgs": ["-c", ". ~/.nvm/nvm.sh;nvm run default \"$@\"", "dummy"]
@@ -29,7 +29,7 @@
             "preLaunchTask": "TS - Compile current file",
             "sourceMaps": true,
             "stopOnEntry": false,
-            "runtimeExecutable": "~/.nvm/versions/node/v24.14.0/bin/node",
+            "runtimeExecutable": "~/.nvm/versions/node/v24.14.1/bin/node",
         },
         {
             "name": "JS - Launch file (Windows)",
