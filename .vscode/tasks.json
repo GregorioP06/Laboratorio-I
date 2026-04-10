@@ -1,11 +1,21 @@
 {
-	"version": "2.0.0",
-	"tasks": [
+    "version": "2.0.0",
+    "tasks": [
         {
             "label": "TS - Compile current file",
-            "type": "shell",
-            "command": "tsc --ignoreConfig --strict --module nodenext --outDir ${workspaceFolder}/out --sourceMap ${relativeFile}",
-            "problemMatcher": ["$tsc"],
+            "type": "process",
+            "command": "tsc",
+            "args": [
+                "--ignoreConfig",
+                "--sourceMap",
+                "--strict",
+                "--module",
+                "nodenext",
+                "--outDir",
+                "${workspaceFolder}/out",
+                "${relativeFile}"
+            ],
+            "problemMatcher": ["$tsc"]
         }
     ]
 }
