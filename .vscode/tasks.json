@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "TS - Compile current file",
-            "type": "process",
+            "type": "shell", // shell on Linux, process on Windows
             "command": "tsc",
             "args": [
                 "--ignoreConfig",
