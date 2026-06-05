@@ -3,3 +3,9 @@
 import abc from "./modulo2.js";
 
 console.log(abc);
+
+import * as mod from "./modulo2.js";
+console.log(mod);
+mod.f1();
+console.log(mod.f1);
+console.log(mod.default);
