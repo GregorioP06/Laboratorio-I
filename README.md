@@ -4,3 +4,6 @@ https://www.typescriptlang.org/play/?noCheck=true&filetype=js
 
 > [!NOTE]  
 > Eseguire/debuggare codice (JS/TS) su Linux usando le configurazioni in launch.json richiede la modifica di "runtimeExecutable" con la versione installata di node.
+
+> [!NOTE]  
+> Modificare `type` in `.vscode/tasks.json`: `shell` su Linux, `process` su Windows.
